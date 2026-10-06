@@ -1,0 +1,21 @@
+L ENGENHARIA — VISTORIA DE REFORMA
+
+Aplicativo PWA para levantamento de reformas.
+
+Principais recursos:
+- Cliente, condomínio, apartamento/unidade, endereço e data
+- Ambientes separados ou integrados
+- Comprimento, largura e altura
+- Cálculo automático de área do piso/teto, paredes e rodapé
+- Portas e janelas com desconto automático na pintura/rodapé
+- Serviços básicos para marcar
+- Botão + para adicionar serviços personalizados e unidade
+- Múltiplas fotos por ambiente com legenda
+- Observações opcionais
+- Resumo final por serviço (m², m, un ou vb)
+- Histórico local
+- Relatório com fotos e opção de salvar em PDF pelo navegador
+- Logo e slogan da L Engenharia
+
+Para publicar no GitHub Pages:
+substitua os arquivos atuais do repositório por estes arquivos, mantendo index.html na raiz.
