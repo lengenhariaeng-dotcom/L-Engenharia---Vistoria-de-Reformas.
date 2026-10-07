@@ -1,20 +1,14 @@
-L ENGENHARIA — VISTORIA DE REFORMAS | VERSÃO PROFISSIONAL
+L ENGENHARIA — VISTORIA DE REFORMAS | VERSÃO PROFISSIONAL v2
 
-Esta versão foi redesenhada para ficar mais limpa e eficaz:
-- Sem banner/hero grande: mais área útil para a vistoria.
-- Ambientes em cartões recolhíveis.
-- Serviços ficam ocultos até clicar em “Selecionar serviços”.
-- Portas e janelas ficam em janela separada.
-- Fotos compactas durante a vistoria.
-- Indicadores rápidos: ambientes, fotos, serviços e área levantada.
-- Resumo geral separado.
-- PDF dividido em:
-  1. Dados da vistoria
-  2. Resumo geral de serviços
-  3. Serviços por ambiente
-  4. Relatório fotográfico separado por ambiente
-- Impressão em página branca dedicada, reduzindo risco de páginas pretas.
-- Logo e slogan da L Engenharia.
+Correção principal:
+- Botão de abrir/fechar ambiente redesenhado para funcionar e aparecer melhor no celular.
+- No celular, o botão fica maior e fixo no cabeçalho do ambiente.
+- O botão Excluir ambiente foi movido para dentro do cartão no celular para não disputar espaço.
+- Cache do aplicativo atualizado para facilitar a entrada da nova versão no celular.
 
-Para atualizar no GitHub Pages:
-substitua os arquivos atuais do repositório por estes arquivos e mantenha index.html na raiz.
+Para atualizar:
+1. Envie estes arquivos ao mesmo repositório GitHub.
+2. Faça Commit changes.
+3. Aguarde o GitHub Pages publicar.
+4. No celular, feche o app/site e abra novamente.
+5. Se ainda aparecer a versão antiga, remova o atalho/PWA e abra o link novamente no navegador.
