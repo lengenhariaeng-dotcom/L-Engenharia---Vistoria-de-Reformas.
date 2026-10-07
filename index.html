@@ -4,103 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#15396A">
-<title>L Engenharia | Vistoria de Reforma</title>
+<title>L Engenharia | Vistoria de Reformas</title>
 <link rel="manifest" href="manifest.json">
 <style>
 :root{
-  --blue:#173E74;--blue2:#0E2D55;--gold:#C9A45D;--ink:#182434;
-  --muted:#6F7B88;--bg:#EEF2F5;--white:#fff;--line:#DCE3E9;--soft:#F8FAFB;
-  --danger:#9B3434;--ok:#327257;
+  --blue:#173E74;--blue-2:#0E2D55;--gold:#C8A35A;--bg:#F3F5F7;--card:#FFF;
+  --text:#1D2937;--muted:#6B7786;--line:#E2E7EC;--soft:#F8FAFB;--danger:#9A3535;
+  --shadow:0 10px 28px rgba(20,42,68,.07)
 }
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
-.topbar{
-  position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
-  padding:10px 16px;background:rgba(255,255,255,.97);border-bottom:1px solid #E8EDF1;
-  backdrop-filter:blur(12px)
-}
-.brand{display:flex;align-items:center;gap:10px}.brand img{width:56px;height:46px;object-fit:contain}
-.brand strong{display:block;color:var(--blue);font-size:16px}.brand span{display:block;font-size:11px;color:var(--muted)}
-.top-actions{display:flex;gap:8px}
-.btn{border:0;border-radius:12px;padding:11px 14px;font-weight:800}
-.btn-primary{background:var(--blue);color:white}.btn-gold{background:var(--gold);color:#17283A}.btn-ghost{background:#EDF2F6;color:var(--blue)}
-.btn-danger{background:#F9E9E9;color:var(--danger)}
-main{max-width:1180px;margin:auto;padding:20px 14px 70px}
-.hero{
-  display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;background:linear-gradient(135deg,var(--blue2),var(--blue));
-  border-radius:26px;padding:28px;color:white;box-shadow:0 22px 48px rgba(15,45,85,.17)
-}
-.hero h1{font-size:clamp(32px,5vw,56px);line-height:1.02;margin:6px 0 10px}.hero p{margin:0;color:#DDE6EF;max-width:740px;line-height:1.55}
-.hero-logo{background:white;border-radius:20px;padding:18px;display:flex;justify-content:center;align-items:center;min-height:180px}
-.hero-logo img{width:min(100%,300px);height:160px;object-fit:contain}
-.kicker{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:900}
-.tabs{display:flex;gap:8px;overflow:auto;margin:16px 0}
-.tabs button{border:0;background:white;color:var(--blue);font-weight:800;border-radius:999px;padding:11px 16px;white-space:nowrap}
-.tabs button.active{background:var(--gold)}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button,input,select,textarea{font:inherit} button{cursor:pointer}.hidden{display:none!important}
+.topbar{position:sticky;top:0;z-index:50;height:66px;display:flex;align-items:center;justify-content:space-between;padding:8px 18px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:11px}.brand img{width:48px;height:42px;object-fit:contain}.brand strong{display:block;color:var(--blue);font-size:15px}.brand span{display:block;color:var(--muted);font-size:11px;margin-top:1px}
+.top-actions{display:flex;gap:8px}.btn{border:0;border-radius:11px;padding:10px 13px;font-weight:800}.primary{background:var(--blue);color:white}.gold{background:var(--gold);color:#182A3E}.ghost{background:#EEF2F6;color:var(--blue)}.danger{background:#F9EBEB;color:var(--danger)}
+main{max-width:1100px;margin:auto;padding:18px 14px 80px}
+.page-title{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:8px 0 14px}.page-title h1{margin:0;color:var(--blue);font-size:clamp(26px,4vw,40px);line-height:1.05}.page-title p{margin:6px 0 0;color:var(--muted);max-width:720px}.code{background:#EAF0F6;color:var(--blue);font-weight:900;border-radius:999px;padding:7px 10px;font-size:12px;white-space:nowrap}
+.nav{display:flex;gap:8px;overflow:auto;margin:12px 0 16px}.nav button{border:0;border-radius:999px;background:#FFF;color:var(--blue);font-weight:800;padding:10px 15px;white-space:nowrap;box-shadow:0 3px 10px rgba(20,42,68,.04)}.nav button.active{background:var(--blue);color:#FFF}
 .panel{display:none}.panel.active{display:block}
-.card{background:white;border-radius:20px;padding:18px;box-shadow:0 12px 34px rgba(12,35,58,.06);margin-bottom:14px}
-.card h2,.card h3,.card h4{color:var(--blue)}
-.section-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}
-.section-head h2,.section-head h3{margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid #E8EDF1;border-radius:18px;padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h2,.card h3,.card h4{color:var(--blue)}.card-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:14px}.card-head h2,.card-head h3{margin:0}.card-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .grid{display:grid;gap:12px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 label{display:flex;flex-direction:column;gap:6px;color:var(--blue);font-weight:800;font-size:13px}
-input,select,textarea{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:white;color:var(--ink);outline:none}
-input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,93,.16)}
-textarea{resize:vertical;min-height:84px}
-.env-list{display:grid;gap:14px}
-.env-card{border:1px solid #E4E9EE;border-radius:18px;background:#FCFDFD;overflow:hidden}
-.env-titlebar{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 15px;background:linear-gradient(90deg,#F5F7FA,#FFF)}
-.env-title{display:flex;gap:10px;align-items:center}.env-number{width:38px;height:38px;border-radius:12px;background:var(--blue);color:var(--gold);display:grid;place-items:center;font-weight:900}
-.env-title h3{margin:0}.env-title small{display:block;color:var(--muted);font-weight:600}
-.env-body{padding:16px}
-.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
-.metric{background:#F5F8FA;border-radius:13px;padding:12px}.metric b{display:block;color:var(--blue);font-size:20px}.metric span{font-size:11px;color:var(--muted)}
-.subcard{border:1px solid var(--line);border-radius:15px;padding:13px;margin-top:12px;background:white}
-.subcard-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
-.subcard-title h4{margin:0}
-.opening-item,.custom-service-row{display:grid;grid-template-columns:1.3fr .7fr .7fr auto;gap:8px;align-items:end;margin-top:8px}
-.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.service-item{display:grid;grid-template-columns:auto 1fr 100px 55px;gap:8px;align-items:center;border:1px solid #E6EBEF;border-radius:12px;padding:9px 10px}
-.service-item input[type=checkbox]{width:18px;height:18px}.service-item .name{font-weight:800;color:var(--blue);font-size:13px}.unit{font-size:12px;color:var(--muted)}
-.photo-zone{border:1.5px dashed #BCC7D0;border-radius:16px;background:#FAFBFC;padding:14px;text-align:center}
-.photo-zone input{display:none}.photo-add{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:white;padding:11px 14px;border-radius:12px;font-weight:900;cursor:pointer}
-.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.photo-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:white}
-.photo-card img{width:100%;height:155px;object-fit:cover;background:#111}.photo-card .cap{padding:8px}.photo-card input{padding:8px;font-size:12px}.photo-card button{width:100%;border:0;background:#F9EAEA;color:var(--danger);padding:8px;font-weight:800}
-.summary-table{width:100%;border-collapse:collapse}.summary-table th,.summary-table td{padding:11px 10px;border-bottom:1px solid #E7EBEF;text-align:left}.summary-table th{color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.05em}.summary-table td:last-child,.summary-table th:last-child{text-align:right}
-.total-chip{display:inline-flex;align-items:center;gap:7px;background:#EDF3F8;color:var(--blue);border-radius:999px;padding:7px 10px;font-weight:900;font-size:12px}
-.empty{text-align:center;color:var(--muted);padding:28px}
-.history-item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px}
-.history-item h4{margin:0 0 4px}.history-item p{margin:2px 0;color:var(--muted);font-size:12px}
-.note{background:#FFF8E9;color:#6E5723;border-radius:12px;padding:12px 13px;font-size:12px;margin-top:12px}
-dialog{border:0;border-radius:20px;padding:0;max-width:min(980px,94vw);box-shadow:0 30px 80px rgba(0,0,0,.24)}
-dialog::backdrop{background:rgba(6,18,30,.55);backdrop-filter:blur(4px)}
-.modal{padding:20px;background:white}
-.modal h3{margin-top:0;color:var(--blue)}
-.report{max-width:900px}.report-header{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:2px solid var(--blue);padding-bottom:10px}
-.report-header img{width:145px;height:85px;object-fit:contain}.report-title{text-align:right}.report-title h2{margin:0;color:var(--blue)}.report-title p{margin:4px 0;color:var(--muted)}
-.report-section{margin-top:18px;break-inside:avoid}.report-section h3{border-bottom:1px solid #DDE4EA;padding-bottom:6px;margin-bottom:10px}
-.report-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.report-box{background:#F7F9FB;border-radius:10px;padding:10px}
-.report-box b{display:block;color:var(--blue);font-size:12px;margin-bottom:4px}.report-box span{font-size:13px}
-.report-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.report-photo{border:1px solid #E1E6EA;border-radius:10px;overflow:hidden;break-inside:avoid}.report-photo img{width:100%;height:220px;object-fit:cover}.report-photo p{margin:0;padding:7px 9px;font-size:11px}
-.slogan{text-align:center;color:var(--blue);font-weight:800;margin-top:22px}.slogan span{color:var(--gold)}
-.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:22px}
-@media(max-width:820px){
- .hero{grid-template-columns:1fr}.hero-logo{display:none}.grid.two,.grid.three,.metric-row,.services-grid,.photo-grid{grid-template-columns:1fr}
- .service-item{grid-template-columns:auto 1fr 85px 48px}
- .opening-item,.custom-service-row{grid-template-columns:1fr 1fr}.opening-item button,.custom-service-row button{grid-column:2}
- .report-grid,.report-photos{grid-template-columns:1fr}
+input,select,textarea{border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#FFF;color:var(--text);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,163,90,.15)}
+textarea{resize:vertical;min-height:82px}
+.quick-status{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.status-card{background:#FFF;border:1px solid var(--line);border-radius:14px;padding:12px 13px}.status-card b{display:block;color:var(--blue);font-size:20px}.status-card span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.env-list{display:grid;gap:10px}.env{background:#FFF;border:1px solid #E5EAF0;border-radius:16px;overflow:hidden;box-shadow:0 5px 18px rgba(20,42,68,.04)}
+.env-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 14px;background:#FBFCFD}.env-main{display:flex;gap:11px;align-items:center;min-width:0}.env-num{width:38px;height:38px;border-radius:11px;background:var(--blue);color:var(--gold);display:grid;place-items:center;font-weight:900;flex:0 0 auto}.env-name{min-width:0}.env-name h3{margin:0;color:var(--blue);font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.env-name small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.env-actions{display:flex;gap:7px;align-items:center}.icon-btn{width:38px;height:38px;border:0;border-radius:10px;background:#EEF2F6;color:var(--blue);font-size:17px;font-weight:900}.env.collapsed .chev{transform:rotate(-90deg)}.chev{display:inline-block;transition:.18s}.env.collapsed .env-body{display:none}
+.env-body{padding:14px}
+.measure-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 0}.metric{background:#F7F9FB;border:1px solid #EDF0F3;border-radius:12px;padding:10px}.metric b{display:block;color:var(--blue);font-size:18px}.metric span{font-size:10px;color:var(--muted)}
+.block{border-top:1px solid #EDF0F3;margin-top:14px;padding-top:14px}.block-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}.block-head h4{margin:0;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 9px;border-radius:999px;background:#EDF3F8;color:var(--blue);font-size:12px;font-weight:800}.chip span{color:var(--muted);font-weight:700}
+.empty-line{color:var(--muted);font-size:12px;padding:4px 0}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.photo{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#FFF}.photo img{width:100%;height:120px;object-fit:cover;background:#111}.photo input{border:0;border-top:1px solid var(--line);border-radius:0;padding:8px;font-size:11px}.photo button{width:100%;border:0;background:#F9EBEB;color:var(--danger);padding:7px;font-size:11px;font-weight:800}
+.summary-table{width:100%;border-collapse:collapse}.summary-table th,.summary-table td{padding:10px 9px;border-bottom:1px solid #E8EDF1;text-align:left}.summary-table th{font-size:11px;color:var(--blue);text-transform:uppercase}.summary-table td:last-child,.summary-table th:last-child{text-align:right}
+.history-item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:12px;margin-top:9px}.history-item h4{margin:0 0 4px}.history-item p{margin:2px 0;color:var(--muted);font-size:12px}
+dialog{border:0;border-radius:18px;padding:0;max-width:min(820px,94vw);box-shadow:0 28px 80px rgba(0,0,0,.25)}dialog::backdrop{background:rgba(7,18,30,.48);backdrop-filter:blur(3px)}.modal{padding:18px;background:#FFF}.modal h3{margin-top:0;color:var(--blue)}
+.service-picker{display:grid;gap:7px;max-height:58vh;overflow:auto}.service-row{display:grid;grid-template-columns:auto 1fr 110px 55px;gap:8px;align-items:center;border:1px solid #E6EBF0;border-radius:11px;padding:9px}.service-row input[type=checkbox]{width:18px;height:18px}.service-row strong{color:var(--blue);font-size:12px}.service-row small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.service-row input[type=number]{padding:8px;font-size:12px}.unit{font-size:11px;color:var(--muted)}
+.custom-row{display:grid;grid-template-columns:1fr 110px 80px auto;gap:8px;align-items:end;margin-top:8px}
+.opening-row{display:grid;grid-template-columns:1fr .7fr .7fr auto;gap:8px;align-items:end;margin-top:8px}
+.report-header{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:2px solid var(--blue);padding-bottom:10px}.report-header img{width:140px;height:82px;object-fit:contain}.report-title{text-align:right}.report-title h2{margin:0;color:var(--blue)}.report-title p{margin:3px 0;color:var(--muted)}
+.report-section{margin-top:18px}.report-section h3{color:var(--blue);border-bottom:2px solid var(--gold);padding-bottom:6px;margin-bottom:10px}.report-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.report-box{border:1px solid #DFE5EA;border-radius:9px;padding:9px;background:#FFF}.report-box b{display:block;color:var(--blue);font-size:11px;margin-bottom:4px}.report-box span{font-size:12px}
+.report-env{border:1px solid #DFE5EA;border-radius:10px;padding:11px;margin-top:10px;break-inside:avoid}.report-env h4{margin:0 0 8px;color:var(--blue)}
+.photo-report{break-before:page}.photo-env{margin-top:14px}.photo-env+.photo-env{break-before:page}.photo-env h4{color:var(--blue);border-bottom:1px solid #DDD;padding-bottom:5px}.report-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.report-photo{border:1px solid #DDD;border-radius:8px;overflow:hidden;break-inside:avoid}.report-photo img{width:100%;height:245px;object-fit:contain;background:#FFF}.report-photo p{margin:0;padding:7px 9px;font-size:10.5px}
+.slogan{text-align:center;color:var(--blue);font-weight:800;margin-top:20px}.slogan span{color:var(--gold)}
+.small{font-size:11px;color:var(--muted)}
+@media(max-width:780px){
+ .page-title{align-items:flex-start;flex-direction:column}.grid.two,.grid.three,.measure-row,.metrics,.quick-status{grid-template-columns:1fr 1fr}.photo-grid{grid-template-columns:repeat(2,1fr)}
+ .service-row{grid-template-columns:auto 1fr 85px 42px}.opening-row,.custom-row{grid-template-columns:1fr 1fr}.opening-row button,.custom-row button{grid-column:2}
+ .report-grid,.report-photos{grid-template-columns:1fr}.topbar{padding:8px 12px}
 }
-@media print{
- body *{visibility:hidden!important}
- #reportDialog,#reportDialog *{visibility:visible!important}
- #reportDialog{position:absolute;inset:0;max-width:none;width:100%;box-shadow:none}
- .no-print{display:none!important}
- .modal{padding:0}
- .report-photo img{height:190px}
+@media(max-width:520px){
+ .grid.two,.grid.three,.measure-row,.metrics,.quick-status{grid-template-columns:1fr}.photo-grid{grid-template-columns:1fr 1fr}.brand span{display:none}
 }
 </style>
 </head>
@@ -108,135 +66,109 @@ dialog::backdrop{background:rgba(6,18,30,.55);backdrop-filter:blur(4px)}
 <header class="topbar">
   <div class="brand">
     <img src="logo-l-engenharia.png" alt="L Engenharia">
-    <div><strong>Vistoria de Reforma</strong><span>Você sonha, a L Engenharia realiza.</span></div>
+    <div><strong>Vistoria de Reformas</strong><span>Você sonha, a L Engenharia realiza.</span></div>
   </div>
-  <div class="top-actions">
-    <button id="installBtn" class="btn btn-ghost hidden">Instalar</button>
-  </div>
+  <div class="top-actions"><button id="installBtn" class="btn ghost hidden">Instalar</button></div>
 </header>
 
 <main>
-  <section class="hero">
-    <div>
-      <div class="kicker">LEVANTAMENTO • FOTOS • QUANTITATIVOS • RELATÓRIO</div>
-      <h1>Vistoria de obra organizada, ambiente por ambiente.</h1>
-      <p>Cadastre cliente e imóvel, meça os ambientes, selecione os serviços, registre fotos e gere o resumo quantitativo da reforma em um único relatório.</p>
-    </div>
-    <div class="hero-logo"><img src="logo-l-engenharia.png" alt="L Engenharia"></div>
-  </section>
+  <div class="page-title">
+    <div><h1>Nova vistoria</h1><p>Levantamento técnico de ambientes, serviços, medidas e fotos para reforma.</p></div>
+    <span id="code" class="code"></span>
+  </div>
 
-  <nav class="tabs">
-    <button class="active" data-tab="vistoria">Nova vistoria</button>
+  <nav class="nav">
+    <button class="active" data-tab="vistoria">Vistoria</button>
     <button data-tab="resumo">Resumo</button>
     <button data-tab="historico">Histórico</button>
   </nav>
 
   <section id="tab-vistoria" class="panel active">
-    <div class="card">
-      <div class="section-head">
-        <div><h2>Dados da vistoria</h2><p>Informações que aparecerão no relatório final.</p></div>
-        <span id="vistoriaCode" class="total-chip"></span>
-      </div>
-      <div class="grid three">
-        <label>Nome do cliente<input id="cliente" placeholder="Nome completo"></label>
-        <label>Condomínio<input id="condominio" placeholder="Nome do condomínio"></label>
-        <label>Apartamento / unidade<input id="unidade" placeholder="Ex.: 83 / Bloco B"></label>
-        <label>Endereço<input id="endereco" placeholder="Rua, número, cidade"></label>
-        <label>Data da vistoria<input id="dataVistoria" type="date"></label>
-        <label>Responsável pela vistoria<input id="responsavel" value="L Engenharia"></label>
-      </div>
-      <label style="margin-top:12px">Observação geral <span style="font-weight:600;color:var(--muted)">(opcional)</span>
-        <textarea id="obsGeral" placeholder="Informações gerais do imóvel ou da visita. Pode deixar em branco."></textarea>
-      </label>
+    <div class="quick-status">
+      <div class="status-card"><b id="stAmb">0</b><span>ambientes</span></div>
+      <div class="status-card"><b id="stFotos">0</b><span>fotos</span></div>
+      <div class="status-card"><b id="stServ">0</b><span>serviços selecionados</span></div>
+      <div class="status-card"><b id="stArea">0,00</b><span>m² de piso levantado</span></div>
     </div>
 
     <div class="card">
-      <div class="section-head">
-        <div><h2>Ambientes</h2><p>Adicione sala, cozinha, quartos, banheiros ou ambientes integrados.</p></div>
-        <button id="addEnvBtn" class="btn btn-gold">+ Adicionar ambiente</button>
+      <div class="card-head"><div><h2>Dados do cliente</h2><p>Informações gerais da visita e do imóvel.</p></div></div>
+      <div class="grid three">
+        <label>Cliente<input id="cliente" placeholder="Nome do cliente"></label>
+        <label>Condomínio<input id="condominio" placeholder="Nome do condomínio"></label>
+        <label>Apartamento / unidade<input id="unidade" placeholder="Ex.: Apto. 83"></label>
+        <label>Endereço<input id="endereco" placeholder="Rua, número, cidade"></label>
+        <label>Data<input id="dataVistoria" type="date"></label>
+        <label>Responsável<input id="responsavel" value="L Engenharia"></label>
+      </div>
+      <label style="margin-top:12px">Observação geral <span class="small">(opcional)</span><textarea id="obsGeral" placeholder="Pode deixar em branco."></textarea></label>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div><h2>Ambientes</h2><p>Cadastre somente o necessário. Cada ambiente pode ser recolhido pela seta.</p></div>
+        <button id="addEnv" class="btn gold">+ Ambiente</button>
       </div>
       <div id="envList" class="env-list"></div>
     </div>
 
     <div class="card">
-      <div class="section-head">
-        <div><h2>Finalizar vistoria</h2><p>Salve o levantamento e gere o relatório com fotos e quantitativos.</p></div>
+      <div class="card-head"><div><h2>Finalizar</h2><p>Salve ou gere o relatório em PDF.</p></div></div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <button id="save" class="btn primary">Salvar vistoria</button>
+        <button id="goSummary" class="btn gold">Ver resumo</button>
+        <button id="report" class="btn ghost">Gerar relatório / PDF</button>
       </div>
-      <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap">
-        <button id="saveInspection" class="btn btn-primary">Salvar vistoria</button>
-        <button id="openSummary" class="btn btn-gold">Ver resumo de serviços</button>
-        <button id="generateReport" class="btn btn-ghost">Gerar relatório / PDF</button>
-      </div>
-      <div class="note">O PDF é gerado pelo próprio navegador: no relatório, escolha “Imprimir / Salvar PDF”.</div>
     </div>
   </section>
 
   <section id="tab-resumo" class="panel">
-    <div class="card">
-      <div class="section-head">
-        <div><h2>Resumo quantitativo</h2><p>Somatório de todos os ambientes por tipo de serviço.</p></div>
-        <button id="refreshSummary" class="btn btn-ghost">Atualizar</button>
-      </div>
-      <div id="summaryWrap"></div>
-    </div>
+    <div class="card"><div class="card-head"><div><h2>Resumo geral de serviços</h2><p>Somatório de todos os ambientes.</p></div><button id="refreshSummary" class="btn ghost">Atualizar</button></div><div id="summary"></div></div>
   </section>
 
   <section id="tab-historico" class="panel">
-    <div class="card">
-      <div class="section-head"><div><h2>Histórico</h2><p>Vistorias salvas neste dispositivo.</p></div></div>
-      <div id="historyList"></div>
-    </div>
+    <div class="card"><div class="card-head"><div><h2>Histórico</h2><p>Vistorias salvas neste dispositivo.</p></div></div><div id="history"></div></div>
   </section>
-
-  <div class="footer">L Engenharia • Você sonha, a L Engenharia realiza.</div>
 </main>
 
-<dialog id="envDialog">
-  <div class="modal">
-    <h3>Adicionar ambiente</h3>
-    <div class="grid two">
-      <label>Ambiente
-        <select id="envPreset">
-          <option>Sala</option><option>Cozinha</option><option>Sala + Cozinha (integrado)</option><option>Quarto</option><option>Suíte</option>
-          <option>Banheiro</option><option>Lavabo</option><option>Varanda</option><option>Área de serviço</option><option>Corredor</option><option>Escritório</option><option>Outro</option>
-        </select>
-      </label>
-      <label>Nome personalizado <span style="font-weight:600;color:var(--muted)">(opcional)</span><input id="envCustomName" placeholder="Ex.: Quarto Isabelle"></label>
-    </div>
-    <div style="display:flex;gap:10px;margin-top:16px"><button id="confirmEnv" class="btn btn-primary">Adicionar</button><button id="cancelEnv" class="btn btn-ghost">Cancelar</button></div>
+<dialog id="envDialog"><div class="modal">
+  <h3>Novo ambiente</h3>
+  <div class="grid two">
+    <label>Ambiente<select id="envPreset"><option>Sala</option><option>Cozinha</option><option>Sala + Cozinha</option><option>Quarto</option><option>Suíte</option><option>Banheiro</option><option>Lavabo</option><option>Varanda</option><option>Área de serviço</option><option>Corredor</option><option>Escritório</option><option>Outro</option></select></label>
+    <label>Nome personalizado <span class="small">(opcional)</span><input id="envCustom" placeholder="Ex.: Quarto 2"></label>
   </div>
-</dialog>
+  <div style="display:flex;gap:8px;margin-top:14px"><button id="envConfirm" class="btn primary">Adicionar</button><button id="envCancel" class="btn ghost">Cancelar</button></div>
+</div></dialog>
 
-<dialog id="customServiceDialog">
-  <div class="modal">
-    <h3>Novo serviço</h3>
-    <input id="customServiceEnvId" type="hidden">
-    <div class="grid two">
-      <label>Nome do serviço<input id="customServiceName" placeholder="Ex.: Regularização de contrapiso"></label>
-      <label>Unidade
-        <select id="customServiceUnit"><option>m²</option><option>m</option><option>un</option><option>vb</option></select>
-      </label>
+<dialog id="serviceDialog"><div class="modal">
+  <h3>Serviços do ambiente</h3>
+  <input id="serviceEnvId" type="hidden">
+  <div id="servicePicker" class="service-picker"></div>
+  <div style="border-top:1px solid var(--line);margin-top:12px;padding-top:12px">
+    <strong style="color:var(--blue)">Adicionar serviço personalizado</strong>
+    <div class="custom-row">
+      <label>Serviço<input id="customName" placeholder="Ex.: Regularização"></label>
+      <label>Quantidade<input id="customQty" type="number" min="0" step="0.01"></label>
+      <label>Unidade<select id="customUnit"><option>m²</option><option>m</option><option>un</option><option>vb</option></select></label>
+      <button id="addCustom" class="btn gold">+</button>
     </div>
-    <div style="display:flex;gap:10px;margin-top:16px"><button id="confirmCustomService" class="btn btn-primary">Adicionar</button><button id="cancelCustomService" class="btn btn-ghost">Cancelar</button></div>
   </div>
-</dialog>
+  <div style="display:flex;justify-content:flex-end;margin-top:14px"><button id="serviceClose" class="btn primary">Concluir</button></div>
+</div></dialog>
 
-<dialog id="reportDialog">
-  <div class="modal report">
-    <div id="reportContent"></div>
-    <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-      <button id="printReport" class="btn btn-primary">Imprimir / Salvar PDF</button>
-      <button id="closeReport" class="btn btn-ghost">Fechar</button>
-    </div>
-  </div>
-</dialog>
+<dialog id="openingDialog"><div class="modal">
+  <h3>Portas e janelas</h3>
+  <input id="openingEnvId" type="hidden">
+  <div id="openingList"></div>
+  <button id="addOpening" class="btn gold" style="margin-top:10px">+ Adicionar abertura</button>
+  <div style="display:flex;justify-content:flex-end;margin-top:14px"><button id="openingClose" class="btn primary">Concluir</button></div>
+</div></dialog>
+
+<dialog id="reportDialog"><div class="modal"><div id="reportContent"></div><div style="display:flex;gap:8px;margin-top:16px"><button id="printReport" class="btn primary">Imprimir / Salvar PDF</button><button id="closeReport" class="btn ghost">Fechar</button></div></div></dialog>
 
 <script>
-const $=id=>document.getElementById(id);
-const uid=()=>crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random());
-const money=n=>Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
-const today=()=>new Date().toISOString().slice(0,10);
-
+const $=id=>document.getElementById(id), uid=()=>crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random());
+const fmt=n=>Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
 const SERVICE_DEFS=[
  {k:"pintura_paredes",name:"Pintura de paredes",unit:"m²",basis:"walls"},
  {k:"pintura_teto",name:"Pintura de teto",unit:"m²",basis:"floor"},
@@ -252,334 +184,97 @@ const SERVICE_DEFS=[
  {k:"drywall",name:"Parede em drywall",unit:"m²",basis:"manual"},
  {k:"portas",name:"Portas",unit:"un",basis:"manual"},
  {k:"esquadrias",name:"Esquadrias",unit:"un",basis:"manual"},
- {k:"ar",name:"Ar-condicionado / infraestrutura",unit:"un",basis:"manual"},
- {k:"marcenaria",name:"Marcenaria",unit:"un",basis:"manual"}
+ {k:"ar",name:"Ar-condicionado / infraestrutura",unit:"un",basis:"manual"}
 ];
+let state={code:"LE-"+new Date().toISOString().replace(/\D/g,"").slice(0,12),envs:[]},deferredPrompt=null;
+$("code").textContent=state.code;$("dataVistoria").value=new Date().toISOString().slice(0,10);
 
-let state={
- code:"LE-"+new Date().toISOString().replace(/\D/g,"").slice(0,12),
- envs:[]
-};
-let deferredPrompt=null;
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("tab-"+b.dataset.tab).classList.add("active");if(b.dataset.tab==="resumo")renderSummary();if(b.dataset.tab==="historico")renderHistory()});
 
-$("vistoriaCode").textContent=state.code;
-$("dataVistoria").value=today();
-
-document.querySelectorAll(".tabs button").forEach(btn=>btn.onclick=()=>{
- document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
- document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
- btn.classList.add("active"); $("tab-"+btn.dataset.tab).classList.add("active");
- if(btn.dataset.tab==="resumo") renderSummary();
- if(btn.dataset.tab==="historico") renderHistory();
-});
-
-$("addEnvBtn").onclick=()=>$("envDialog").showModal();
-$("cancelEnv").onclick=()=>$("envDialog").close();
-$("confirmEnv").onclick=()=>{
- const custom=$("envCustomName").value.trim();
- const preset=$("envPreset").value;
- const name=custom || preset;
- addEnvironment(name);
- $("envCustomName").value="";
- $("envDialog").close();
-};
-
-function addEnvironment(name){
- const env={id:uid(),name,length:"",width:"",height:"2.70",obs:"",openings:[],services:{},customServices:[],photos:[]};
- SERVICE_DEFS.forEach(s=>env.services[s.k]={checked:false,qty:"",manual:false});
- state.envs.push(env); renderEnvs();
+function newEnv(name){
+ const env={id:uid(),name,length:"",width:"",height:"2.70",obs:"",collapsed:false,openings:[],services:{},custom:[],photos:[]};
+ SERVICE_DEFS.forEach(d=>env.services[d.k]={checked:false,qty:"",manual:false});state.envs.push(env);renderEnvs()
 }
+function calc(e){const L=+e.length||0,W=+e.width||0,H=+e.height||0;let oa=0,dw=0;e.openings.forEach(o=>{const w=+o.width||0,h=+o.height||0;oa+=w*h;if(o.type==="Porta")dw+=w});return{floor:L*W,walls:Math.max(0,2*(L+W)*H-oa),perimeter:Math.max(0,2*(L+W)-dw)}}
+function auto(e,d){const m=calc(e);return d.basis==="floor"?m.floor:d.basis==="walls"?m.walls:d.basis==="perimeter"?m.perimeter:0}
+function refreshAuto(e){SERVICE_DEFS.forEach(d=>{const s=e.services[d.k];if(s.checked&&!s.manual&&d.basis!=="manual")s.qty=auto(e,d).toFixed(2)})}
+function stats(){const amb=state.envs.length,photos=state.envs.reduce((a,e)=>a+e.photos.length,0),serv=state.envs.reduce((a,e)=>a+SERVICE_DEFS.filter(d=>e.services[d.k].checked).length+e.custom.length,0),area=state.envs.reduce((a,e)=>a+calc(e).floor,0);$("stAmb").textContent=amb;$("stFotos").textContent=photos;$("stServ").textContent=serv;$("stArea").textContent=fmt(area)}
 
-function calc(env){
- const L=parseFloat(env.length)||0,W=parseFloat(env.width)||0,H=parseFloat(env.height)||0;
- const floor=L*W;
- let openingsArea=0,doorWidth=0;
- env.openings.forEach(o=>{
-   const ow=parseFloat(o.width)||0,oh=parseFloat(o.height)||0;
-   openingsArea+=ow*oh;
-   if(o.type==="Porta")doorWidth+=ow;
- });
- const wall=Math.max(0,2*(L+W)*H-openingsArea);
- const perimeter=Math.max(0,2*(L+W)-doorWidth);
- return {floor,wall,perimeter};
-}
-function autoQty(env,def){
- const m=calc(env);
- if(def.basis==="floor")return m.floor;
- if(def.basis==="walls")return m.wall;
- if(def.basis==="perimeter")return m.perimeter;
- return 0;
-}
-function syncAuto(env){
- SERVICE_DEFS.forEach(def=>{
-   const s=env.services[def.k];
-   if(s.checked && !s.manual && def.basis!=="manual")s.qty=autoQty(env,def).toFixed(2);
- });
-}
-function updateEnv(id,field,value){
- const env=state.envs.find(e=>e.id===id); if(!env)return;
- env[field]=value;
- if(["length","width","height"].includes(field)){syncAuto(env);renderEnvs();}
-}
-function deleteEnv(id){state.envs=state.envs.filter(e=>e.id!==id);renderEnvs()}
+$("addEnv").onclick=()=>$("envDialog").showModal();$("envCancel").onclick=()=>$("envDialog").close();$("envConfirm").onclick=()=>{newEnv($("envCustom").value.trim()||$("envPreset").value);$("envCustom").value="";$("envDialog").close()};
 
 function renderEnvs(){
- const wrap=$("envList");
- if(!state.envs.length){wrap.innerHTML='<div class="empty">Nenhum ambiente adicionado. Clique em “+ Adicionar ambiente”.</div>';return}
- wrap.innerHTML=state.envs.map((env,idx)=>{
-   const m=calc(env);
-   const openings=env.openings.map(o=>`
-     <div class="opening-item">
-       <label>Tipo<select data-open="${o.id}" data-field="type"><option ${o.type==="Porta"?"selected":""}>Porta</option><option ${o.type==="Janela"?"selected":""}>Janela</option><option ${o.type==="Outro"?"selected":""}>Outro</option></select></label>
-       <label>Largura (m)<input type="number" step="0.01" data-open="${o.id}" data-field="width" value="${o.width}"></label>
-       <label>Altura (m)<input type="number" step="0.01" data-open="${o.id}" data-field="height" value="${o.height}"></label>
-       <button class="btn btn-danger" data-delopen="${o.id}">Excluir</button>
-     </div>`).join("");
-   const services=SERVICE_DEFS.map(def=>{
-     const s=env.services[def.k];
-     const qty=s.qty || (s.checked && def.basis!=="manual" ? autoQty(env,def).toFixed(2) : "");
-     return `<div class="service-item">
-       <input type="checkbox" data-service="${def.k}" ${s.checked?"checked":""}>
-       <div><div class="name">${def.name}</div><div class="unit">${def.basis==="manual"?"Informe a quantidade":"Cálculo automático, editável"}</div></div>
-       <input type="number" min="0" step="0.01" data-qty="${def.k}" value="${qty}" ${s.checked?"":"disabled"}>
-       <div class="unit">${def.unit}</div>
-     </div>`;
-   }).join("");
-   const custom=env.customServices.map(cs=>`
-     <div class="custom-service-row">
-       <label>Serviço<input value="${escapeHtml(cs.name)}" data-cs="${cs.id}" data-csf="name"></label>
-       <label>Quantidade<input type="number" min="0" step="0.01" value="${cs.qty}" data-cs="${cs.id}" data-csf="qty"></label>
-       <label>Unidade<select data-cs="${cs.id}" data-csf="unit"><option ${cs.unit==="m²"?"selected":""}>m²</option><option ${cs.unit==="m"?"selected":""}>m</option><option ${cs.unit==="un"?"selected":""}>un</option><option ${cs.unit==="vb"?"selected":""}>vb</option></select></label>
-       <button class="btn btn-danger" data-delcs="${cs.id}">Excluir</button>
-     </div>`).join("");
-   const photos=env.photos.map((p,pi)=>`
-     <div class="photo-card">
-       <img src="${p.src}" alt="Foto ${pi+1}">
-       <div class="cap"><input data-photocap="${p.id}" value="${escapeHtml(p.caption||"")}" placeholder="Legenda da foto (opcional)"></div>
-       <button data-delphoto="${p.id}">Remover</button>
-     </div>`).join("");
-   return `<div class="env-card" data-env="${env.id}">
-     <div class="env-titlebar">
-       <div class="env-title"><div class="env-number">${String(idx+1).padStart(2,"0")}</div><div><h3>${escapeHtml(env.name)}</h3><small>${m.floor?money(m.floor)+" m² de piso":"Informe as medidas"}</small></div></div>
-       <button class="btn btn-danger" data-delenv="${env.id}">Excluir ambiente</button>
-     </div>
-     <div class="env-body">
-       <div class="grid three">
-         <label>Comprimento (m)<input type="number" min="0" step="0.01" data-envfield="length" value="${env.length}"></label>
-         <label>Largura (m)<input type="number" min="0" step="0.01" data-envfield="width" value="${env.width}"></label>
-         <label>Altura (m)<input type="number" min="0" step="0.01" data-envfield="height" value="${env.height}"></label>
-       </div>
-       <div class="metric-row">
-         <div class="metric"><b>${money(m.floor)}</b><span>m² piso / teto</span></div>
-         <div class="metric"><b>${money(m.wall)}</b><span>m² paredes líquidas</span></div>
-         <div class="metric"><b>${money(m.perimeter)}</b><span>m rodapé estimado</span></div>
-         <div class="metric"><b>${env.openings.length}</b><span>portas / janelas cadastradas</span></div>
-       </div>
-
-       <div class="subcard">
-         <div class="subcard-title"><h4>Portas e janelas</h4><button class="btn btn-ghost" data-addopen="${env.id}">+ Abertura</button></div>
-         ${openings || '<div class="small" style="color:var(--muted)">Opcional. Cadastre portas e janelas para descontar da área de pintura e do rodapé.</div>'}
-       </div>
-
-       <div class="subcard">
-         <div class="subcard-title"><h4>Serviços a executar</h4><button class="btn btn-gold" data-addservice="${env.id}">+ Serviço</button></div>
-         <div class="services-grid">${services}</div>
-         ${custom?`<div style="margin-top:10px">${custom}</div>`:""}
-       </div>
-
-       <div class="subcard">
-         <div class="subcard-title"><h4>Fotos do ambiente</h4></div>
-         <div class="photo-zone">
-           <input id="photo-${env.id}" type="file" accept="image/*" capture="environment" multiple data-photo="${env.id}">
-           <label class="photo-add" for="photo-${env.id}">📷 Adicionar fotos</label>
-           ${photos?`<div class="photo-grid">${photos}</div>`:'<div class="small" style="margin-top:8px;color:var(--muted)">Você pode incluir várias fotos e adicionar legenda em cada uma.</div>'}
-         </div>
-       </div>
-
-       <label style="margin-top:12px">Observação do ambiente <span style="font-weight:600;color:var(--muted)">(opcional)</span>
-         <textarea data-envfield="obs" placeholder="Pode deixar em branco.">${escapeHtml(env.obs)}</textarea>
-       </label>
-     </div>
-   </div>`;
- }).join("");
- bindEnvEvents();
-}
-
-function bindEnvEvents(){
- document.querySelectorAll("[data-envfield]").forEach(el=>el.onchange=()=>{
-   const card=el.closest("[data-env]"); updateEnv(card.dataset.env,el.dataset.envfield,el.value);
- });
- document.querySelectorAll("[data-delenv]").forEach(b=>b.onclick=()=>confirm("Excluir este ambiente?")&&deleteEnv(b.dataset.delenv));
- document.querySelectorAll("[data-addopen]").forEach(b=>b.onclick=()=>{
-   const env=state.envs.find(e=>e.id===b.dataset.addopen);env.openings.push({id:uid(),type:"Porta",width:"",height:""});renderEnvs();
- });
- document.querySelectorAll("[data-open]").forEach(el=>el.onchange=()=>{
-   const env=state.envs.find(e=>e.id===el.closest("[data-env]").dataset.env),o=env.openings.find(x=>x.id===el.dataset.open);
-   o[el.dataset.field]=el.value;syncAuto(env);renderEnvs();
- });
- document.querySelectorAll("[data-delopen]").forEach(b=>b.onclick=()=>{
-   const env=state.envs.find(e=>e.id===b.closest("[data-env]").dataset.env);env.openings=env.openings.filter(x=>x.id!==b.dataset.delopen);syncAuto(env);renderEnvs();
- });
- document.querySelectorAll("[data-service]").forEach(ch=>ch.onchange=()=>{
-   const env=state.envs.find(e=>e.id===ch.closest("[data-env]").dataset.env),def=SERVICE_DEFS.find(d=>d.k===ch.dataset.service),s=env.services[def.k];
-   s.checked=ch.checked;s.manual=false;s.qty=ch.checked?(def.basis==="manual"?"":autoQty(env,def).toFixed(2)):"";renderEnvs();
- });
- document.querySelectorAll("[data-qty]").forEach(inp=>inp.onchange=()=>{
-   const env=state.envs.find(e=>e.id===inp.closest("[data-env]").dataset.env),s=env.services[inp.dataset.qty];
-   s.qty=inp.value;s.manual=true;
- });
- document.querySelectorAll("[data-addservice]").forEach(b=>b.onclick=()=>{
-   $("customServiceEnvId").value=b.dataset.addservice;$("customServiceName").value="";$("customServiceUnit").value="m²";$("customServiceDialog").showModal();
- });
- document.querySelectorAll("[data-cs]").forEach(el=>el.onchange=()=>{
-   const env=state.envs.find(e=>e.id===el.closest("[data-env]").dataset.env),cs=env.customServices.find(x=>x.id===el.dataset.cs);cs[el.dataset.csf]=el.value;
- });
- document.querySelectorAll("[data-delcs]").forEach(b=>b.onclick=()=>{
-   const env=state.envs.find(e=>e.id===b.closest("[data-env]").dataset.env);env.customServices=env.customServices.filter(x=>x.id!==b.dataset.delcs);renderEnvs();
- });
- document.querySelectorAll("[data-photo]").forEach(inp=>inp.onchange=async()=>{
-   const env=state.envs.find(e=>e.id===inp.dataset.photo);
-   for(const f of [...inp.files]){
-     const src=await compressImage(f);env.photos.push({id:uid(),src,caption:""});
-   }
-   renderEnvs();
- });
- document.querySelectorAll("[data-photocap]").forEach(inp=>inp.onchange=()=>{
-   const env=state.envs.find(e=>e.id===inp.closest("[data-env]").dataset.env),p=env.photos.find(x=>x.id===inp.dataset.photocap);p.caption=inp.value;
- });
- document.querySelectorAll("[data-delphoto]").forEach(b=>b.onclick=()=>{
-   const env=state.envs.find(e=>e.id===b.closest("[data-env]").dataset.env);env.photos=env.photos.filter(x=>x.id!==b.dataset.delphoto);renderEnvs();
- });
-}
-$("cancelCustomService").onclick=()=>$("customServiceDialog").close();
-$("confirmCustomService").onclick=()=>{
- const name=$("customServiceName").value.trim();if(!name)return alert("Informe o nome do serviço.");
- const env=state.envs.find(e=>e.id===$("customServiceEnvId").value);
- env.customServices.push({id:uid(),name,unit:$("customServiceUnit").value,qty:""});
- $("customServiceDialog").close();renderEnvs();
-};
-
-function compressImage(file){
- return new Promise((resolve,reject)=>{
-   const reader=new FileReader();
-   reader.onload=()=>{
-     const img=new Image();
-     img.onload=()=>{
-       const max=1400,scale=Math.min(1,max/Math.max(img.width,img.height));
-       const c=document.createElement("canvas");c.width=Math.round(img.width*scale);c.height=Math.round(img.height*scale);
-       c.getContext("2d").drawImage(img,0,0,c.width,c.height);resolve(c.toDataURL("image/jpeg",.78));
-     };img.onerror=reject;img.src=reader.result;
-   };reader.onerror=reject;reader.readAsDataURL(file);
- });
-}
-
-function projectData(){
- return {
-   code:state.code,cliente:$("cliente").value,condominio:$("condominio").value,unidade:$("unidade").value,
-   endereco:$("endereco").value,dataVistoria:$("dataVistoria").value,responsavel:$("responsavel").value,
-   obsGeral:$("obsGeral").value,envs:state.envs,createdAt:new Date().toISOString()
- };
-}
-function aggregate(){
- const map=new Map();
- state.envs.forEach(env=>{
-   SERVICE_DEFS.forEach(def=>{
-     const s=env.services[def.k];if(!s.checked)return;
-     const q=parseFloat(s.qty)||0,key=def.name+"|"+def.unit;
-     map.set(key,(map.get(key)||0)+q);
-   });
-   env.customServices.forEach(cs=>{
-     const q=parseFloat(cs.qty)||0,key=cs.name+"|"+cs.unit;map.set(key,(map.get(key)||0)+q);
-   });
- });
- return [...map.entries()].map(([k,qty])=>{const [name,unit]=k.split("|");return{name,unit,qty}}).sort((a,b)=>a.name.localeCompare(b.name));
-}
-function renderSummary(){
- const rows=aggregate();const floor=state.envs.reduce((s,e)=>s+calc(e).floor,0);
- $("summaryWrap").innerHTML=rows.length?`
-   <div style="margin-bottom:12px"><span class="total-chip">Área total de piso levantada: ${money(floor)} m²</span></div>
-   <table class="summary-table"><thead><tr><th>Serviço</th><th>Unidade</th><th>Quantidade</th></tr></thead>
-   <tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.name)}</td><td>${r.unit}</td><td>${money(r.qty)}</td></tr>`).join("")}</tbody></table>`
-   :'<div class="empty">Nenhum serviço selecionado ainda.</div>';
-}
-$("refreshSummary").onclick=renderSummary;
-$("openSummary").onclick=()=>{document.querySelector('[data-tab="resumo"]').click()};
-function reportHTML(){
- const p=projectData(),rows=aggregate();
- const envHtml=p.envs.map((env,idx)=>{
-   const m=calc(env), selected=[];
-   SERVICE_DEFS.forEach(def=>{const s=env.services[def.k];if(s.checked)selected.push({name:def.name,qty:parseFloat(s.qty)||0,unit:def.unit})});
-   env.customServices.forEach(cs=>selected.push({name:cs.name,qty:parseFloat(cs.qty)||0,unit:cs.unit}));
-   const photos=env.photos.map(ph=>`<div class="report-photo"><img src="${ph.src}"><p>${escapeHtml(ph.caption||"Foto do ambiente")}</p></div>`).join("");
-   return `<div class="report-section">
-     <h3>${String(idx+1).padStart(2,"0")} — ${escapeHtml(env.name)}</h3>
-     <div class="report-grid">
-       <div class="report-box"><b>Dimensões</b><span>${env.length||"-"} × ${env.width||"-"} m • altura ${env.height||"-"} m</span></div>
-       <div class="report-box"><b>Área do piso / teto</b><span>${money(m.floor)} m²</span></div>
-       <div class="report-box"><b>Área líquida de paredes</b><span>${money(m.wall)} m²</span></div>
-       <div class="report-box"><b>Rodapé estimado</b><span>${money(m.perimeter)} m</span></div>
-     </div>
-     ${selected.length?`<table class="summary-table" style="margin-top:10px"><thead><tr><th>Serviço</th><th>Qtd.</th></tr></thead><tbody>${selected.map(s=>`<tr><td>${escapeHtml(s.name)}</td><td>${money(s.qty)} ${s.unit}</td></tr>`).join("")}</tbody></table>`:""}
-     ${env.obs?`<div class="report-box" style="margin-top:10px"><b>Observação</b><span>${escapeHtml(env.obs)}</span></div>`:""}
-     ${photos?`<div class="report-photos">${photos}</div>`:""}
-   </div>`;
- }).join("");
- return `<div class="report-header">
-   <img src="logo-l-engenharia.png" alt="L Engenharia">
-   <div class="report-title"><h2>Relatório de Vistoria de Reforma</h2><p>${escapeHtml(p.code)}</p></div>
- </div>
- <div class="report-section">
-   <h3>Dados da vistoria</h3>
-   <div class="report-grid">
-     <div class="report-box"><b>Cliente</b><span>${escapeHtml(p.cliente||"-")}</span></div>
-     <div class="report-box"><b>Condomínio</b><span>${escapeHtml(p.condominio||"-")}</span></div>
-     <div class="report-box"><b>Apartamento / unidade</b><span>${escapeHtml(p.unidade||"-")}</span></div>
-     <div class="report-box"><b>Data</b><span>${p.dataVistoria?new Date(p.dataVistoria+"T12:00:00").toLocaleDateString("pt-BR"):"-"}</span></div>
-     <div class="report-box"><b>Endereço</b><span>${escapeHtml(p.endereco||"-")}</span></div>
-     <div class="report-box"><b>Responsável</b><span>${escapeHtml(p.responsavel||"-")}</span></div>
+ const w=$("envList");stats();
+ if(!state.envs.length){w.innerHTML='<div class="small" style="padding:10px 0">Nenhum ambiente cadastrado.</div>';return}
+ w.innerHTML=state.envs.map((e,i)=>{const m=calc(e),selected=[];
+ SERVICE_DEFS.forEach(d=>{const s=e.services[d.k];if(s.checked)selected.push({name:d.name,qty:s.qty,unit:d.unit})});
+ e.custom.forEach(c=>selected.push({name:c.name,qty:c.qty,unit:c.unit}));
+ const chips=selected.map(s=>`<span class="chip">${esc(s.name)} <span>${fmt(s.qty)} ${s.unit}</span></span>`).join("");
+ const photos=e.photos.map(p=>`<div class="photo"><img src="${p.src}"><input data-cap="${p.id}" value="${esc(p.caption||"")}" placeholder="Legenda opcional"><button data-delphoto="${p.id}">Remover</button></div>`).join("");
+ return `<div class="env ${e.collapsed?"collapsed":""}" data-env="${e.id}">
+  <div class="env-head"><div class="env-main"><div class="env-num">${String(i+1).padStart(2,"0")}</div><div class="env-name"><h3>${esc(e.name)}</h3><small>${m.floor?fmt(m.floor)+" m²":"sem medidas"} • ${selected.length} serviço(s) • ${e.photos.length} foto(s)</small></div></div>
+  <div class="env-actions"><button class="icon-btn" data-toggle="${e.id}" title="${e.collapsed?"Abrir":"Recolher"}"><span class="chev">⌄</span></button><button class="btn danger" data-del="${e.id}">Excluir</button></div></div>
+  <div class="env-body">
+   <div class="measure-row">
+    <label>Comprimento (m)<input data-field="length" type="number" min="0" step="0.01" value="${e.length}"></label>
+    <label>Largura (m)<input data-field="width" type="number" min="0" step="0.01" value="${e.width}"></label>
+    <label>Altura (m)<input data-field="height" type="number" min="0" step="0.01" value="${e.height}"></label>
    </div>
-   ${p.obsGeral?`<div class="report-box" style="margin-top:10px"><b>Observação geral</b><span>${escapeHtml(p.obsGeral)}</span></div>`:""}
- </div>
- <div class="report-section">
-   <h3>Resumo dos serviços</h3>
-   ${rows.length?`<table class="summary-table"><thead><tr><th>Serviço</th><th>Unidade</th><th>Quantidade</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.name)}</td><td>${r.unit}</td><td>${money(r.qty)}</td></tr>`).join("")}</tbody></table>`:'<div class="small">Nenhum serviço selecionado.</div>'}
- </div>
- ${envHtml}
- <div class="slogan">Você sonha, a <span>L Engenharia</span> realiza.</div>`;
+   <div class="metrics"><div class="metric"><b>${fmt(m.floor)}</b><span>m² piso / teto</span></div><div class="metric"><b>${fmt(m.walls)}</b><span>m² paredes</span></div><div class="metric"><b>${fmt(m.perimeter)}</b><span>m rodapé</span></div></div>
+   <div class="block"><div class="block-head"><h4>Serviços</h4><button class="btn ghost" data-services="${e.id}">Selecionar serviços</button></div>${chips?`<div class="chips">${chips}</div>`:'<div class="empty-line">Nenhum serviço selecionado.</div>'}</div>
+   <div class="block"><div class="block-head"><h4>Portas e janelas</h4><button class="btn ghost" data-openings="${e.id}">Editar</button></div><div class="empty-line">${e.openings.length?e.openings.length+" abertura(s) cadastrada(s).":"Opcional. Use para descontar pintura e rodapé."}</div></div>
+   <div class="block"><div class="block-head"><h4>Fotos</h4><label class="btn ghost" style="cursor:pointer">+ Fotos<input data-photo="${e.id}" type="file" accept="image/*" capture="environment" multiple style="display:none"></label></div>${photos?`<div class="photo-grid">${photos}</div>`:'<div class="empty-line">Nenhuma foto adicionada.</div>'}</div>
+   <div class="block"><label>Observação do ambiente <span class="small">(opcional)</span><textarea data-field="obs" placeholder="Pode deixar em branco.">${esc(e.obs)}</textarea></label></div>
+  </div></div>`}).join("");bindEnv()
 }
-$("generateReport").onclick=()=>{$("reportContent").innerHTML=reportHTML();$("reportDialog").showModal()};
-$("printReport").onclick=()=>window.print();$("closeReport").onclick=()=>$("reportDialog").close();
-
-$("saveInspection").onclick=()=>{
- const p=projectData();const h=getHistory();h.unshift(p);
- try{localStorage.setItem("l_eng_reformas",JSON.stringify(h.slice(0,12)));alert("Vistoria salva neste dispositivo.");}
- catch(e){alert("Não foi possível salvar todas as fotos no histórico. O relatório continua disponível nesta sessão.");}
-};
-function getHistory(){try{return JSON.parse(localStorage.getItem("l_eng_reformas")||"[]")}catch{return[]}}
-function renderHistory(){
- const h=getHistory();$("historyList").innerHTML=h.length?h.map((p,i)=>`
-   <div class="history-item"><div><h4>${escapeHtml(p.cliente||"Cliente não informado")} — ${escapeHtml(p.condominio||"Sem condomínio")}</h4>
-   <p>${escapeHtml(p.unidade||"")} • ${new Date(p.createdAt).toLocaleString("pt-BR")} • ${p.envs?.length||0} ambiente(s)</p></div>
-   <div style="display:flex;gap:8px"><button class="btn btn-ghost" data-load="${i}">Abrir</button><button class="btn btn-danger" data-delhist="${i}">Excluir</button></div></div>`).join("")
-   :'<div class="empty">Nenhuma vistoria salva.</div>';
- document.querySelectorAll("[data-load]").forEach(b=>b.onclick=()=>loadHistory(+b.dataset.load));
- document.querySelectorAll("[data-delhist]").forEach(b=>b.onclick=()=>{const x=getHistory();x.splice(+b.dataset.delhist,1);localStorage.setItem("l_eng_reformas",JSON.stringify(x));renderHistory()});
+function bindEnv(){
+ document.querySelectorAll("[data-toggle]").forEach(b=>b.onclick=()=>{const e=state.envs.find(x=>x.id===b.dataset.toggle);e.collapsed=!e.collapsed;renderEnvs()});
+ document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>confirm("Excluir ambiente?")&&(state.envs=state.envs.filter(x=>x.id!==b.dataset.del),renderEnvs()));
+ document.querySelectorAll("[data-field]").forEach(el=>el.onchange=()=>{const e=state.envs.find(x=>x.id===el.closest("[data-env]").dataset.env);e[el.dataset.field]=el.value;if(["length","width","height"].includes(el.dataset.field))refreshAuto(e);renderEnvs()});
+ document.querySelectorAll("[data-services]").forEach(b=>b.onclick=()=>openServices(b.dataset.services));
+ document.querySelectorAll("[data-openings]").forEach(b=>b.onclick=()=>openOpenings(b.dataset.openings));
+ document.querySelectorAll("[data-photo]").forEach(inp=>inp.onchange=async()=>{const e=state.envs.find(x=>x.id===inp.dataset.photo);for(const f of [...inp.files])e.photos.push({id:uid(),src:await compress(f),caption:""});renderEnvs()});
+ document.querySelectorAll("[data-cap]").forEach(inp=>inp.onchange=()=>{const e=state.envs.find(x=>x.id===inp.closest("[data-env]").dataset.env),p=e.photos.find(x=>x.id===inp.dataset.cap);p.caption=inp.value});
+ document.querySelectorAll("[data-delphoto]").forEach(b=>b.onclick=()=>{const e=state.envs.find(x=>x.id===b.closest("[data-env]").dataset.env);e.photos=e.photos.filter(x=>x.id!==b.dataset.delphoto);renderEnvs()});
 }
-function loadHistory(i){
- const p=getHistory()[i];if(!p)return;
- state.code=p.code||state.code;state.envs=p.envs||[];$("vistoriaCode").textContent=state.code;
- $("cliente").value=p.cliente||"";$("condominio").value=p.condominio||"";$("unidade").value=p.unidade||"";
- $("endereco").value=p.endereco||"";$("dataVistoria").value=p.dataVistoria||today();$("responsavel").value=p.responsavel||"L Engenharia";$("obsGeral").value=p.obsGeral||"";
- renderEnvs();document.querySelector('[data-tab="vistoria"]').click();
+function openServices(id){$("serviceEnvId").value=id;renderServicePicker();$("serviceDialog").showModal()}
+function renderServicePicker(){const e=state.envs.find(x=>x.id===$("serviceEnvId").value);$("servicePicker").innerHTML=SERVICE_DEFS.map(d=>{const s=e.services[d.k],q=s.qty||(s.checked&&d.basis!=="manual"?auto(e,d).toFixed(2):"");return `<div class="service-row"><input type="checkbox" data-s="${d.k}" ${s.checked?"checked":""}><div><strong>${d.name}</strong><small>${d.basis==="manual"?"Quantidade manual":"Cálculo automático editável"}</small></div><input type="number" min="0" step="0.01" data-q="${d.k}" value="${q}" ${s.checked?"":"disabled"}><div class="unit">${d.unit}</div></div>`}).join("")+e.custom.map(c=>`<div class="service-row"><input type="checkbox" checked disabled><div><strong>${esc(c.name)}</strong><small>Serviço personalizado</small></div><input type="number" min="0" step="0.01" data-cq="${c.id}" value="${c.qty}"><div class="unit">${c.unit}</div></div>`).join("");
+ document.querySelectorAll("[data-s]").forEach(ch=>ch.onchange=()=>{const d=SERVICE_DEFS.find(x=>x.k===ch.dataset.s),s=e.services[d.k];s.checked=ch.checked;s.manual=false;s.qty=ch.checked?(d.basis==="manual"?"":auto(e,d).toFixed(2)):"";renderServicePicker()});
+ document.querySelectorAll("[data-q]").forEach(inp=>inp.onchange=()=>{const s=e.services[inp.dataset.q];s.qty=inp.value;s.manual=true});
+ document.querySelectorAll("[data-cq]").forEach(inp=>inp.onchange=()=>{e.custom.find(x=>x.id===inp.dataset.cq).qty=inp.value});
 }
+$("addCustom").onclick=()=>{const e=state.envs.find(x=>x.id===$("serviceEnvId").value),name=$("customName").value.trim();if(!name)return;e.custom.push({id:uid(),name,qty:$("customQty").value||"",unit:$("customUnit").value});$("customName").value="";$("customQty").value="";renderServicePicker()};
+$("serviceClose").onclick=()=>{$("serviceDialog").close();renderEnvs()};
 
-function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;$("installBtn").classList.remove("hidden")});
-$("installBtn").onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$("installBtn").classList.add("hidden")};
-if("serviceWorker" in navigator && location.protocol!=="file:")navigator.serviceWorker.register("sw.js");
+function openOpenings(id){$("openingEnvId").value=id;renderOpenings();$("openingDialog").showModal()}
+function renderOpenings(){const e=state.envs.find(x=>x.id===$("openingEnvId").value);$("openingList").innerHTML=e.openings.length?e.openings.map(o=>`<div class="opening-row"><label>Tipo<select data-o="${o.id}" data-of="type"><option ${o.type==="Porta"?"selected":""}>Porta</option><option ${o.type==="Janela"?"selected":""}>Janela</option><option ${o.type==="Outro"?"selected":""}>Outro</option></select></label><label>Largura (m)<input data-o="${o.id}" data-of="width" type="number" step="0.01" value="${o.width}"></label><label>Altura (m)<input data-o="${o.id}" data-of="height" type="number" step="0.01" value="${o.height}"></label><button class="btn danger" data-odel="${o.id}">Excluir</button></div>`).join(""):'<div class="small">Nenhuma abertura cadastrada.</div>';document.querySelectorAll("[data-o]").forEach(el=>el.onchange=()=>{const o=e.openings.find(x=>x.id===el.dataset.o);o[el.dataset.of]=el.value;refreshAuto(e)});document.querySelectorAll("[data-odel]").forEach(b=>b.onclick=()=>{e.openings=e.openings.filter(x=>x.id!==b.dataset.odel);refreshAuto(e);renderOpenings()})}
+$("addOpening").onclick=()=>{const e=state.envs.find(x=>x.id===$("openingEnvId").value);e.openings.push({id:uid(),type:"Porta",width:"",height:""});renderOpenings()};$("openingClose").onclick=()=>{$("openingDialog").close();renderEnvs()};
 
-addEnvironment("Sala");
-renderEnvs();
+function aggregate(){const map=new Map();state.envs.forEach(e=>{SERVICE_DEFS.forEach(d=>{const s=e.services[d.k];if(s.checked){const k=d.name+"|"+d.unit;map.set(k,(map.get(k)||0)+(+s.qty||0))}});e.custom.forEach(c=>{const k=c.name+"|"+c.unit;map.set(k,(map.get(k)||0)+(+c.qty||0))})});return [...map].map(([k,qty])=>{const [name,unit]=k.split("|");return{name,unit,qty}}).sort((a,b)=>a.name.localeCompare(b.name))}
+function renderSummary(){const r=aggregate();$("summary").innerHTML=r.length?`<table class="summary-table"><thead><tr><th>Serviço</th><th>Unidade</th><th>Quantidade total</th></tr></thead><tbody>${r.map(x=>`<tr><td>${esc(x.name)}</td><td>${x.unit}</td><td>${fmt(x.qty)}</td></tr>`).join("")}</tbody></table>`:'<div class="small">Nenhum serviço selecionado.</div>'}
+$("refreshSummary").onclick=renderSummary;$("goSummary").onclick=()=>document.querySelector('[data-tab="resumo"]').click();
+
+function project(){return{code:state.code,cliente:$("cliente").value,condominio:$("condominio").value,unidade:$("unidade").value,endereco:$("endereco").value,data:$("dataVistoria").value,responsavel:$("responsavel").value,obs:$("obsGeral").value,envs:state.envs,createdAt:new Date().toISOString()}}
+function reportHtml(){const p=project(),rows=aggregate();const envServices=p.envs.map((e,i)=>{const m=calc(e),sel=[];SERVICE_DEFS.forEach(d=>{const s=e.services[d.k];if(s.checked)sel.push({name:d.name,qty:s.qty,unit:d.unit})});e.custom.forEach(c=>sel.push(c));return `<div class="report-env"><h4>${String(i+1).padStart(2,"0")} — ${esc(e.name)}</h4><div class="report-grid"><div class="report-box"><b>Dimensões</b><span>${e.length||"-"} × ${e.width||"-"} m • h ${e.height||"-"} m</span></div><div class="report-box"><b>Área do piso / teto</b><span>${fmt(m.floor)} m²</span></div><div class="report-box"><b>Área líquida de paredes</b><span>${fmt(m.walls)} m²</span></div><div class="report-box"><b>Rodapé estimado</b><span>${fmt(m.perimeter)} m</span></div></div>${sel.length?`<table class="summary-table" style="margin-top:8px"><thead><tr><th>Serviço</th><th>Un.</th><th>Qtd.</th></tr></thead><tbody>${sel.map(s=>`<tr><td>${esc(s.name)}</td><td>${s.unit}</td><td>${fmt(s.qty)}</td></tr>`).join("")}</tbody></table>`:""}${e.obs?`<div class="report-box" style="margin-top:8px"><b>Observação</b><span>${esc(e.obs)}</span></div>`:""}</div>`}).join("");
+const photos=p.envs.filter(e=>e.photos.length).map(e=>`<div class="photo-env"><h4>${esc(e.name)}</h4><div class="report-photos">${e.photos.map((ph,i)=>`<div class="report-photo"><img src="${ph.src}"><p><strong>Foto ${String(i+1).padStart(2,"0")} — ${esc(e.name)}</strong>${ph.caption?`<br>${esc(ph.caption)}`:""}</p></div>`).join("")}</div></div>`).join("");
+return `<div class="report-header"><img src="logo-l-engenharia.png"><div class="report-title"><h2>Relatório de Vistoria de Reforma</h2><p>${esc(p.code)}</p></div></div>
+<div class="report-section"><h3>Dados da vistoria</h3><div class="report-grid"><div class="report-box"><b>Cliente</b><span>${esc(p.cliente||"-")}</span></div><div class="report-box"><b>Condomínio</b><span>${esc(p.condominio||"-")}</span></div><div class="report-box"><b>Unidade</b><span>${esc(p.unidade||"-")}</span></div><div class="report-box"><b>Data</b><span>${p.data?new Date(p.data+"T12:00:00").toLocaleDateString("pt-BR"):"-"}</span></div><div class="report-box"><b>Endereço</b><span>${esc(p.endereco||"-")}</span></div><div class="report-box"><b>Responsável</b><span>${esc(p.responsavel||"-")}</span></div></div>${p.obs?`<div class="report-box" style="margin-top:8px"><b>Observação geral</b><span>${esc(p.obs)}</span></div>`:""}</div>
+<div class="report-section"><h3>1. Resumo geral de serviços</h3>${rows.length?`<table class="summary-table"><thead><tr><th>Serviço</th><th>Unidade</th><th>Quantidade total</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.unit}</td><td>${fmt(r.qty)}</td></tr>`).join("")}</tbody></table>`:'<div class="small">Nenhum serviço selecionado.</div>'}</div>
+<div class="report-section"><h3>2. Serviços por ambiente</h3>${envServices}</div>
+<div class="report-section photo-report"><h3>3. Relatório fotográfico</h3>${photos||'<div class="small">Nenhuma foto cadastrada.</div>'}</div>
+<div class="slogan">Você sonha, a <span>L Engenharia</span> realiza.</div>`}
+$("report").onclick=()=>{$("reportContent").innerHTML=reportHtml();$("reportDialog").showModal()};$("closeReport").onclick=()=>$("reportDialog").close();
+$("printReport").onclick=()=>{const c=$("reportContent").innerHTML,logo=new URL("logo-l-engenharia.png",location.href).href,w=window.open("","_blank");if(!w)return alert("Libere pop-ups para imprimir.");w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Relatório L Engenharia</title><style>@page{size:A4;margin:12mm}*{box-sizing:border-box}html,body{margin:0;background:#fff;color:#111;font-family:Arial,sans-serif}.report-header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #173E74;padding-bottom:10px}.report-header img{width:140px;height:82px;object-fit:contain}.report-title{text-align:right}.report-title h2{margin:0;color:#173E74}.report-title p{margin:3px 0;color:#666}.report-section{margin-top:18px}.report-section h3{color:#173E74;border-bottom:2px solid #C8A35A;padding-bottom:6px}.report-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.report-box{border:1px solid #DDD;border-radius:8px;padding:9px}.report-box b{display:block;color:#173E74;font-size:11px;margin-bottom:4px}.report-box span{font-size:12px}.summary-table{width:100%;border-collapse:collapse}.summary-table th,.summary-table td{padding:8px 7px;border-bottom:1px solid #DDD;text-align:left;font-size:11px}.summary-table th{color:#173E74;text-transform:uppercase}.summary-table td:last-child,.summary-table th:last-child{text-align:right}.report-env{border:1px solid #DDD;border-radius:9px;padding:10px;margin-top:10px;break-inside:avoid}.report-env h4{margin:0 0 8px;color:#173E74}.photo-report{break-before:page}.photo-env{margin-top:12px}.photo-env+.photo-env{break-before:page}.photo-env h4{color:#173E74;border-bottom:1px solid #DDD;padding-bottom:5px}.report-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.report-photo{border:1px solid #DDD;border-radius:8px;overflow:hidden;break-inside:avoid}.report-photo img{width:100%;height:245px;object-fit:contain;background:#fff}.report-photo p{margin:0;padding:7px 9px;font-size:10.5px}.slogan{text-align:center;color:#173E74;font-weight:700;margin-top:20px}.slogan span{color:#A7813E}.small{font-size:11px;color:#666}</style></head><body>${c.replaceAll('src="logo-l-engenharia.png"',`src="${logo}"`)}</body></html>`);w.document.close();w.focus();setTimeout(()=>w.print(),450)};
+
+$("save").onclick=()=>{const h=getHistory();h.unshift(project());try{localStorage.setItem("l_eng_vistorias_prof",JSON.stringify(h.slice(0,10)));alert("Vistoria salva.");}catch{alert("Não foi possível salvar todas as fotos no histórico deste dispositivo.")}};
+function getHistory(){try{return JSON.parse(localStorage.getItem("l_eng_vistorias_prof")||"[]")}catch{return[]}}
+function renderHistory(){const h=getHistory();$("history").innerHTML=h.length?h.map((p,i)=>`<div class="history-item"><div><h4>${esc(p.cliente||"Cliente não informado")} — ${esc(p.condominio||"Sem condomínio")}</h4><p>${esc(p.unidade||"")} • ${new Date(p.createdAt).toLocaleString("pt-BR")} • ${p.envs.length} ambiente(s)</p></div><div><button class="btn ghost" data-load="${i}">Abrir</button> <button class="btn danger" data-delhist="${i}">Excluir</button></div></div>`).join(""):'<div class="small">Nenhuma vistoria salva.</div>';document.querySelectorAll("[data-load]").forEach(b=>b.onclick=()=>loadHistory(+b.dataset.load));document.querySelectorAll("[data-delhist]").forEach(b=>b.onclick=()=>{const x=getHistory();x.splice(+b.dataset.delhist,1);localStorage.setItem("l_eng_vistorias_prof",JSON.stringify(x));renderHistory()})}
+function loadHistory(i){const p=getHistory()[i];state.code=p.code;state.envs=(p.envs||[]).map(e=>({...e,collapsed:false}));$("code").textContent=state.code;$("cliente").value=p.cliente||"";$("condominio").value=p.condominio||"";$("unidade").value=p.unidade||"";$("endereco").value=p.endereco||"";$("dataVistoria").value=p.data||"";$("responsavel").value=p.responsavel||"L Engenharia";$("obsGeral").value=p.obs||"";renderEnvs();document.querySelector('[data-tab="vistoria"]').click()}
+
+function compress(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const max=1500,s=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",.8))};im.onerror=rej;im.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;$("installBtn").classList.remove("hidden")});$("installBtn").onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$("installBtn").classList.add("hidden")};
+if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("sw.js");
+newEnv("Sala");
 </script>
 </body>
 </html>

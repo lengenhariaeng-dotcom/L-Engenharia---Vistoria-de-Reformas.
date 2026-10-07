@@ -1,21 +1,20 @@
-L ENGENHARIA — VISTORIA DE REFORMA
+L ENGENHARIA — VISTORIA DE REFORMAS | VERSÃO PROFISSIONAL
 
-Aplicativo PWA para levantamento de reformas.
+Esta versão foi redesenhada para ficar mais limpa e eficaz:
+- Sem banner/hero grande: mais área útil para a vistoria.
+- Ambientes em cartões recolhíveis.
+- Serviços ficam ocultos até clicar em “Selecionar serviços”.
+- Portas e janelas ficam em janela separada.
+- Fotos compactas durante a vistoria.
+- Indicadores rápidos: ambientes, fotos, serviços e área levantada.
+- Resumo geral separado.
+- PDF dividido em:
+  1. Dados da vistoria
+  2. Resumo geral de serviços
+  3. Serviços por ambiente
+  4. Relatório fotográfico separado por ambiente
+- Impressão em página branca dedicada, reduzindo risco de páginas pretas.
+- Logo e slogan da L Engenharia.
 
-Principais recursos:
-- Cliente, condomínio, apartamento/unidade, endereço e data
-- Ambientes separados ou integrados
-- Comprimento, largura e altura
-- Cálculo automático de área do piso/teto, paredes e rodapé
-- Portas e janelas com desconto automático na pintura/rodapé
-- Serviços básicos para marcar
-- Botão + para adicionar serviços personalizados e unidade
-- Múltiplas fotos por ambiente com legenda
-- Observações opcionais
-- Resumo final por serviço (m², m, un ou vb)
-- Histórico local
-- Relatório com fotos e opção de salvar em PDF pelo navegador
-- Logo e slogan da L Engenharia
-
-Para publicar no GitHub Pages:
-substitua os arquivos atuais do repositório por estes arquivos, mantendo index.html na raiz.
+Para atualizar no GitHub Pages:
+substitua os arquivos atuais do repositório por estes arquivos e mantenha index.html na raiz.

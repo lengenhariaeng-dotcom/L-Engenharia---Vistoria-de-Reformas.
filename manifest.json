@@ -1,9 +1,9 @@
 {
-  "name": "L Engenharia - Vistoria de Reforma",
+  "name": "L Engenharia - Vistoria de Reformas",
   "short_name": "L Vistoria",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#EEF2F5",
+  "background_color": "#F3F5F7",
   "theme_color": "#173E74",
   "icons": [
     {
